@@ -6,10 +6,11 @@ app.get('/',function(){
 });
 
 app.get('/about',function(req,res){
-    res.end('about');
+    console.log('query',req.query);
+    res.end('about'+req.query);
 });
 
-app.get('/too/:bar',function(req,res){
+app.get('/foo/:bar',function(req,res){
     var value=req.params.bar;
     res.end(value);
 });
