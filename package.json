@@ -1,8 +1,8 @@
 {
   "name": "webframework",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "webframework",
-  "main": "app.js",
+  "main": "./lib/webframework.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node app.js"
