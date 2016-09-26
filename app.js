@@ -15,15 +15,25 @@ app.get('/about', function (req, res) {
 app.get('/foo/:bar/:name', function (req, res) {
     var bar = req.params.bar;
     var name = req.params.name;
+
     res.write('foo')
     res.write('<hr />');
-    res.write(req.query.id);
+    
 
     res.write('<hr />');
     res.write(bar);
 
     res.write('<hr />');
     res.write(name);
+
+    res.end('');
+});
+
+app.get('/blog/:id', function (req, res) {
+    var id = req.params.id;
+
+    res.write('blog : '+id);
+
 
     res.end('');
 });
