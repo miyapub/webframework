@@ -1,9 +1,11 @@
 var app = require('./lib/webframework');
 var fs = require('fs');
 
-app.get('/', function () {
-
-    return 'index';
+app.get('/', function (req, res) {
+    fs.readFile('./html/index.html', function (err, data) {
+        if (err) throw err;
+        res.end(data);
+    });
 });
 
 app.get('/about', function (req, res) {
@@ -21,5 +23,7 @@ app.on404(function (req, res) {
         res.end(data);
     });
 });
+
+app.debug(true);//开启debug
 
 app.start(3000);
