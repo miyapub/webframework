@@ -12,9 +12,20 @@ app.get('/about', function (req, res) {
     res.end('about ' + req.query.name);
 });
 
-app.get('/foo/:bar', function (req, res) {
-    var value = req.params.bar;
-    res.end(value);
+app.get('/foo/:bar/:name', function (req, res) {
+    var bar = req.params.bar;
+    var name = req.params.name;
+    res.write('foo')
+    res.write('<hr />');
+    res.write(req.query.id);
+
+    res.write('<hr />');
+    res.write(bar);
+
+    res.write('<hr />');
+    res.write(name);
+
+    res.end('');
 });
 
 app.on404(function (req, res) {
